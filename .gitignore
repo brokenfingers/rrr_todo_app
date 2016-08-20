@@ -11,3 +11,9 @@
 /log/*
 !/log/.keep
 /tmp
+
+# Untangling Sprockets (To use Webpack)
+/app/assets/javascripts
+
+# Ignore node modules
+/node_modules
