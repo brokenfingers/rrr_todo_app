@@ -1,12 +1,11 @@
 import React from 'react';
-import { render } from 'react-dom';
 
-var TodoList = React.createClass({
-  render: function() {
+class TodoList extends React.Component {
+  render() {
     return (
-      <h1>This is a test to see if it works</h1>
+      <h1>This is todo list app</h1>
     );
   }
-});
+};
 
 export default TodoList;
