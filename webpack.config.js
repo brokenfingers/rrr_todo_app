@@ -8,9 +8,8 @@ var config = module.exports = {
   // the main entry point for our application's frontend js
   // anything not required by this file will never end up in the compiled bundle
   entry: [
-    'webpack-dev-server/client?http://localhost:8080',
     'webpack/hot/only-dev-server',
-    './app/frontend/javascripts/entry.js',
+    './app/frontend/javascripts/entry.js'
   ]
 };
 
