@@ -7,7 +7,19 @@ var config = module.exports = {
 
   // the main entry point for our application's frontend js
   // anything not required by this file will never end up in the compiled bundle
-  entry: './app/frontend/javascripts/entry.js',
+  entry: [
+    'webpack-dev-server/client?http://localhost:8080',
+    'webpack/hot/only-dev-server',
+    './app/frontend/javascripts/entry.js',
+  ]
+};
+
+config.module = {
+  loaders: [{
+    test: /\.jsx?$/,
+    exclude: /node_modules/,
+    loader: 'babel'
+  }]
 };
 
 // this config dicates where compiled bundles end up
@@ -23,10 +35,10 @@ config.output = {
 };
 
 config.resolve = {
-  extensions: ['', '.js'],
+  extensions: ['', '.js', '.jsx'],
   modulesDirectories: ['node_modules'],
 };
 
 config.plugins = [
-
+  new webpack.HotModuleReplacementPlugin()
 ];
