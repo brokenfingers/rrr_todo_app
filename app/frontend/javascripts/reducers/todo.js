@@ -5,9 +5,9 @@ import {
 
 function todos(state =  { todos: [] }, action) {
   switch (action.type) {
-    case GET_TODOS:
+    case LOAD_TODOS:
       return Object.assign({}, state, {
-        todos: actions.payload.todos
+        todos: action.payload.todos
       });
     default:
       return state;
