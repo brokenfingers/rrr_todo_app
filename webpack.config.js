@@ -7,10 +7,10 @@ var config = module.exports = {
 
   // the main entry point for our application's frontend js
   // anything not required by this file will never end up in the compiled bundle
-  entry: [
-    'webpack/hot/only-dev-server',
-    './app/frontend/javascripts/applications/todo.js'
-  ]
+  entry: {
+    webpackDev: 'webpack/hot/only-dev-server',
+    index: './app/frontend/javascripts/applications/todo.js'
+  }
 };
 
 config.module = {
@@ -27,7 +27,7 @@ config.output = {
   path: path.join(__dirname, 'app', 'assets', 'javascripts'),
 
   // the filename of the compiled bundle, e.g. app/assets/javascripts/bundle.js
-  filename: 'bundle.js',
+  filename: '[name].bundle.js',
 
   // if the webpack code-splitting feature is enabled, this is the path it'll use to download bundles
   publicPath: '/assets',
