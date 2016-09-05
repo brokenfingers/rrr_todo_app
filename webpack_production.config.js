@@ -2,8 +2,6 @@ var path = require('path');
 var webpack = require('webpack');
 
 var config = module.exports = {
-  context: __dirname,
-
   entry: {
     index: './app/frontend/javascripts/applications/todo.js'
   }
