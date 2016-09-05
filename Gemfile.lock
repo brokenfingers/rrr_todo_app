@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/brokenfingers/react_redux_webpack_scaffolder.git
+  revision: c917432f22c4444028262a45bbcd35fdf699453b
+  specs:
+    react_redux_webpack_scaffolder (0.0.1)
+      rails (~> 4.2.5)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -152,6 +159,7 @@ DEPENDENCIES
   jquery-rails
   pg (~> 0.15)
   rails (= 4.2.6)
+  react_redux_webpack_scaffolder!
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   spring
