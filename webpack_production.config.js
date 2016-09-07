@@ -16,8 +16,7 @@ config.module = {
 };
 
 config.output = {
-  path: path.join(__dirname, 'app', 'assets', 'javascripts', 'webpack_bundle'),
-  filename: '[name].bundle.js',
+  filename: './webpack_bundle/[name].bundle.js',
 };
 
 config.resolve = {

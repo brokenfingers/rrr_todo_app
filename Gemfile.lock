@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/brokenfingers/react_redux_webpack_scaffolder.git
-  revision: 4fb81b08b5d5daaadf099f51558190c46e878c1b
+  revision: afc2382700d1142d70ef92ba2c35d388b834324b
   specs:
     react_redux_webpack_scaffolder (0.0.1)
       rails (~> 4.2.5)
@@ -44,11 +44,11 @@ GEM
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
     arel (6.0.3)
-    autoprefixer-rails (6.3.3.1)
+    autoprefixer-rails (6.4.1)
       execjs
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
-    bootstrap-sass (3.3.6)
+    bootstrap-sass (3.3.7)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
     builder (3.2.2)
