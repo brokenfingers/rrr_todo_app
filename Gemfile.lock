@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/brokenfingers/react_redux_webpack_scaffolder.git
-  revision: afc2382700d1142d70ef92ba2c35d388b834324b
+  revision: ac77d83394af5c54dfbb9d0e1358478d5d4da111
   specs:
     react_redux_webpack_scaffolder (0.0.1)
       rails (~> 4.2.5)

@@ -16,7 +16,8 @@ config.module = {
 };
 
 config.output = {
-  filename: './webpack_bundle/[name].bundle.js',
+  filename: './[name].bundle.js',
+  publicPath: '/assets/webpack/'
 };
 
 config.resolve = {
