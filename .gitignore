@@ -13,7 +13,7 @@
 /tmp
 
 # Untangling Sprockets (To use Webpack)
-/app/assets/javascripts
+/app/assets/javascripts/webpack_bundle
 
 # Ignore node modules
 /node_modules
