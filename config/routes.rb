@@ -4,7 +4,9 @@ Rails.application.routes.draw do
 
   root 'home#index'
 
-  resources :todos, except: ['edit', 'new']
+  namespace :api do
+    resources :todos, except: ['edit', 'new']
+  end
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'

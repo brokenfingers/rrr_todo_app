@@ -7,7 +7,7 @@ export const LOAD_TODOS = 'LOAD_TODOS';
 // Returns a function that dispatches an action
 export function fetchTodos() {
   return dispatch => {
-    return fetch('/todos').then(response => {
+    return fetch('/api/todos').then(response => {
       return response.json();
     }).then(jsonResponse => {
       return dispatch(loadTodos(jsonResponse))
