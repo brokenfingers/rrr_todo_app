@@ -11,9 +11,7 @@ const store = configureStore();
 
 render(
   <Provider store={store}>
-    <Application>
-      <TodoList />
-    </Application>
+    <Application />
   </Provider>,
   document.getElementById('todo-list')
 );

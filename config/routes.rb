@@ -4,10 +4,14 @@ Rails.application.routes.draw do
 
   root 'home#index'
 
+  # Nesting under a namespace messes up the helper methods created
+  # such as current_user to current_api_user, etc
+  scope :api do
+    mount_devise_token_auth_for 'User', at: 'auth'
+  end
+
   namespace :api do
     resources :todos, except: ['edit', 'new']
-
-    mount_devise_token_auth_for 'User', at: 'auth'
   end
 
   # You can have the root of your site routed with "root"
