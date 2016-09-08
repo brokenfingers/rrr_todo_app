@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   namespace :api do
     resources :todos, except: ['edit', 'new']
+
+    mount_devise_token_auth_for 'User', at: 'auth'
   end
 
   # You can have the root of your site routed with "root"

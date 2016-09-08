@@ -27,7 +27,11 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+# Scaffolder to create necessary files for webpack
 gem 'react_redux_webpack_scaffolder', git: 'git://github.com/brokenfingers/react_redux_webpack_scaffolder.git'
+
+# Token based authentication
+gem 'devise_token_auth'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
