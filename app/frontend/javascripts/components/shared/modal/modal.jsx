@@ -17,7 +17,7 @@ export default class Modal extends React.Component {
 
   render() {
     return (
-      <div className={this._getModalClassName()} role='dialog' style={this._getModalStyle()}>
+      <div id={this.props.id} className={this._getModalClassName()} role='dialog' style={this._getModalStyle()}>
         <ModalDialog>
           <ModalContent>
             {this.props.children}
@@ -29,5 +29,6 @@ export default class Modal extends React.Component {
 };
 
 Modal.propTypes = {
-  show: React.PropTypes.bool.isRequired
+  show: React.PropTypes.bool.isRequired,
+  id: React.PropTypes.string
 }
