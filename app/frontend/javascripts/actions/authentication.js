@@ -66,10 +66,15 @@ export function registerUser(email, password) {
       return {
         access_token: response.headers.get('Access-Token'),
         client: response.headers.get('Client'),
-        uid: response.headers.get('Uid')
+        uid: response.headers.get('Uid'),
+        status: response.status
       };
     }).then(data => {
-      return dispatch(authenticateUser(data));
+      if (data.status === 401) {
+        alert('Failed need to display error message');
+      } else {
+        return dispatch(authenticateUser(data));
+      }
     });
   }
 };
