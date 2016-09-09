@@ -1,9 +1,8 @@
-import { combineReducers } from 'redux';
 import {
   GET_TODOS, LOAD_TODOS
 } from '../actions/todo'
 
-function todos(state =  { todos: [] }, action) {
+export default function todos(state =  { todos: [] }, action) {
   switch (action.type) {
     case LOAD_TODOS:
       return Object.assign({}, state, {
@@ -13,9 +12,3 @@ function todos(state =  { todos: [] }, action) {
       return state;
   }
 }
-
-const todoReducer = combineReducers({
-  todos
-});
-
-export default todoReducer;

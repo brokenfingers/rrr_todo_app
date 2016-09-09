@@ -5,7 +5,12 @@ export const SIGN_IN = 'SIGN_IN';
 export const SIGN_OUT = 'SIGN_OUT';
 
 export function authenticateUser(payload) {
-  debugger
+  return {
+    type: SIGN_UP,
+    payload: {
+      headers: payload
+    }
+  };
 };
 
 export function sign_up(email, password) {
@@ -29,11 +34,12 @@ export function registerUser(email, password) {
         password_confirmation: password
       })
     }).then((response) => {
-      debugger
-      // Need to get response headers
-      return response.json();
-    }).then(jsonResponse => {
-      debugger
+      return {
+        access_token: response.headers.get('Access-Token'),
+        client: response.headers.get('Client'),
+        uid: response.headers.get('Uid')
+      };
+    }).then(data => {
       return dispatch(authenticateUser(jsonResponse));
     });
   }
