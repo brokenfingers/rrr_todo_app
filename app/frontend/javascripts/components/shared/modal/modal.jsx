@@ -17,7 +17,13 @@ export default class Modal extends React.Component {
 
   render() {
     return (
-      <div id={this.props.id} className={this._getModalClassName()} role='dialog' style={this._getModalStyle()}>
+      <div
+        id={this.props.id}
+        className={this._getModalClassName()}
+        role='dialog'
+        style={this._getModalStyle()}
+        tabIndex='-1'
+      >
         <ModalDialog>
           <ModalContent>
             {this.props.children}

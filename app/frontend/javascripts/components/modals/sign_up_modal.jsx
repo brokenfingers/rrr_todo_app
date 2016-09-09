@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import { toggleModal } from '../../actions/sign_up_modal';
 import { loginUser, registerUser } from '../../actions/authentication';
 
+// Use state on the fields so that they can be cleared after submission
 class SignUpModal extends React.Component {
   constructor(props) {
     super(props)
@@ -28,6 +29,12 @@ class SignUpModal extends React.Component {
   handleRegistration(event) {
     event.preventDefault();
     this.props.dispatch(registerUser(this.refs.email.value, this.refs.password.value));
+  }
+
+  handleClose(event) {
+    if (event.key === 'Escape') {
+      this.props.dispatch(toggleModal());
+    }
   }
 
   renderForm() {
@@ -61,20 +68,22 @@ class SignUpModal extends React.Component {
 
   render() {
     return (
-      <Modal show={this.props.displayModal} id='sign-up-modal'>
-        <ModalBody>
-          <div className='row'>
-            <div className='col-xs-7'>
-              {this.renderForm()}
+      <div onKeyUp={this.handleClose.bind(this)}>
+        <Modal show={this.props.displayModal} id='sign-up-modal'>
+          <ModalBody>
+            <div className='row'>
+              <div className='col-xs-7'>
+                {this.renderForm()}
+              </div>
+              <div className='col-xs-5'>
+                <p>Sign Up Now</p>
+                <p>Lorem Ipsum</p>
+                <a href='#' onClick={this.handleRenderRegistration.bind(this)}>Register Now</a>
+              </div>
             </div>
-            <div className='col-xs-5'>
-              <p>Sign Up Now</p>
-              <p>Lorem Ipsum</p>
-              <a href='#' onClick={this.handleRenderRegistration.bind(this)}>Register Now</a>
-            </div>
-          </div>
-        </ModalBody>
-      </Modal>
+          </ModalBody>
+        </Modal>
+      </div>
     );
   }
 }
