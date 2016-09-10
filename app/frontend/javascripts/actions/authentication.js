@@ -2,6 +2,7 @@ import { api_request } from '../helpers/api_client';
 
 export const SIGN_IN = 'SIGN_IN';
 export const SIGN_OUT = 'SIGN_OUT';
+export const VERIFY_SESSION = 'VERIFY_SESSION';
 
 export function authenticateUser(payload) {
   return {
@@ -11,6 +12,15 @@ export function authenticateUser(payload) {
     }
   };
 };
+
+export function verifySession() {
+  return {
+    type: VERIFY_SESSION,
+    payload: {
+      sessionValid: sessionValid()
+    }
+  };
+}
 
 export function sign_up(email, password) {
   return (dispatch) => {
@@ -43,7 +53,7 @@ export function loginUser(email, password) {
 export function registerUser(email, password) {
   return dispatch => {
     return api_request({
-      url: 'auth/auth',
+      url: 'auth',
       method: 'post',
       body: {
         email: email,
@@ -90,6 +100,16 @@ function parseAuthResponse(response) {
     access_token: response.headers.get('Access-Token'),
     client: response.headers.get('Client'),
     uid: response.headers.get('Uid'),
+    expiry: response.headers.get('Expiry'),
     status: response.status
   };
+}
+
+function sessionValid() {
+  let expiry = localStorage.getItem('expiry') ? parseInt(localStorage.getItem('expiry')) : 0;
+  return unixTime() < expiry;
+}
+
+function unixTime() {
+  return new Date().getTime() / 1000;
 }
