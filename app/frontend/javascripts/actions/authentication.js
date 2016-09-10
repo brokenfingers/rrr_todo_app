@@ -1,4 +1,4 @@
-import fetch from 'isomorphic-fetch';
+import { api_request } from '../helpers/api_client';
 
 export const SIGN_UP = 'SIGN_UP'; // Probably won't use
 export const SIGN_IN = 'SIGN_IN';
@@ -21,23 +21,15 @@ export function sign_up(email, password) {
 
 export function loginUser(email, password) {
   return dispatch => {
-    return fetch('/api/auth/sign_in', {
+    return api_request({
+      url: 'auth/sign_in',
       method: 'post',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
+      body: {
         email: email,
         password: password
-      })
+      }
     }).then((response) => {
-      return {
-        access_token: response.headers.get('Access-Token'),
-        client: response.headers.get('Client'),
-        uid: response.headers.get('Uid'),
-        status: response.status
-      };
+      return parseAuthResponse(response);
     }).then(data => {
       if (data.status === 401) {
         alert('Failed need to display error message');
@@ -51,24 +43,15 @@ export function loginUser(email, password) {
 // Need to get CSRF tokens first before sending request
 export function registerUser(email, password) {
   return dispatch => {
-    return fetch('/api/auth', {
+    return api_request({
+      url: 'auth/auth',
       method: 'post',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
+      body: {
         email: email,
-        password: password,
-        password_confirmation: password
-      })
+        password: password
+      }
     }).then((response) => {
-      return {
-        access_token: response.headers.get('Access-Token'),
-        client: response.headers.get('Client'),
-        uid: response.headers.get('Uid'),
-        status: response.status
-      };
+      return parseAuthResponse(response)
     }).then(data => {
       if (data.status === 401) {
         alert('Failed need to display error message');
@@ -82,3 +65,13 @@ export function registerUser(email, password) {
 export function deauthenticateUser() {
 
 };
+
+// Helper functions
+function parseAuthResponse(response) {
+  return {
+    access_token: response.headers.get('Access-Token'),
+    client: response.headers.get('Client'),
+    uid: response.headers.get('Uid'),
+    status: response.status
+  };
+}
