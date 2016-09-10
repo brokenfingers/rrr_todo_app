@@ -1,6 +1,5 @@
 import { api_request } from '../helpers/api_client';
 
-export const SIGN_UP = 'SIGN_UP'; // Probably won't use
 export const SIGN_IN = 'SIGN_IN';
 export const SIGN_OUT = 'SIGN_OUT';
 
@@ -62,8 +61,27 @@ export function registerUser(email, password) {
   }
 };
 
-export function deauthenticateUser() {
+export function signOutUser() {
+  return dispatch => {
+    return api_request({
+      url: 'auth/sign_out',
+      method: 'delete'
+    }).then((response) => {
+      return parseAuthResponse(response)
+    }).then(data => {
+      if (data.status === 401) {
+        alert('Failed need to display error message');
+      } else {
+        return dispatch(deauthenticateUser());
+      }
+    });
+  };
+}
 
+export function deauthenticateUser() {
+  return {
+    type: SIGN_OUT
+  };
 };
 
 // Helper functions

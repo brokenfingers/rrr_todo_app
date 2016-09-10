@@ -1,12 +1,11 @@
 import {
-  SIGN_UP, SIGN_IN, SIGN_OUT
+  SIGN_IN, SIGN_OUT
 } from '../actions/authentication';
 
 export default function authentication(state = {
   loggedIn: false
 }, action) {
   switch (action.type) {
-    case SIGN_UP:
     case SIGN_IN:
       // Set localStorage creds
       localStorage.setItem('access_token', action.payload.headers.access_token);
