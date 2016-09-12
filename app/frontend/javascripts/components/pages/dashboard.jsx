@@ -2,9 +2,9 @@ import React from 'react';
 import { Component } from 'react';
 import ApplicationLayout from '../layout/application_layout';
 
-export default class Dashboard extends Component {
-  constructor(props) {
-    super(props)
+class Dashboard extends Component {
+  constructor(props, context) {
+    super(props, context)
   }
 
   render() {
@@ -23,3 +23,5 @@ export default class Dashboard extends Component {
     );
   }
 }
+
+export default Dashboard;
