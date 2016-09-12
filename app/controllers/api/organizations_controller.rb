@@ -2,7 +2,7 @@ class Api::OrganizationsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    render json: current_user.organizations
+    render Json.response(current_user.all_organizations, :ok)
   end
 
   def show
