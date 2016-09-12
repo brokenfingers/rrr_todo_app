@@ -1,9 +1,12 @@
 import React from 'react';
 import { Component } from 'react';
+import Organization from './organization';
 
 class OrganizationList extends Component {
   renderOrganizations() {
-    return null;
+    return this.props.organizations.map((organization) => {
+      return <Organization key={organization.id} data={organization} />;
+    });
   }
 
   render() {
