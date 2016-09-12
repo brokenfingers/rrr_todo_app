@@ -17,3 +17,8 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "sign_up_modal";
+
+.container-fluid {
+  padding-left: 0px;
+  padding-right: 0px;
+}

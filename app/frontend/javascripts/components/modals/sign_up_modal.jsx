@@ -7,6 +7,7 @@ import { toggleModal } from '../../actions/sign_up_modal';
 import { loginUser, registerUser } from '../../actions/authentication';
 
 // Use state on the fields so that they can be cleared after submission
+// Should redirect the user to Dashboard if logged in else to Homepage if logged out
 class SignUpModal extends React.Component {
   constructor(props) {
     super(props)
