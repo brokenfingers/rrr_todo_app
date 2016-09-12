@@ -1,11 +1,24 @@
 import React from 'react';
 import { Component } from 'react';
-import { connect } from 'react-redux';
 
-class Dashboard extends Component {
+export default class Dashboard extends Component {
+  constructor(props) {
+    super(props)
+  }
+
   render() {
-    return <p>This is the dashboard</p>
+    return (
+      <div>
+        <div className='row'>
+          <div className='col-xs-2'>
+            {/* This will render sidebar with Links to other panels */}
+            This is the sidebar
+          </div>
+          <div className='col-xs-10'>
+            {this.props.children}
+          </div>
+        </div>
+      </div>
+    );
   }
 }
-
-export default Dashboard;

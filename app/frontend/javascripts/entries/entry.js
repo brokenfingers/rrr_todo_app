@@ -6,6 +6,7 @@ import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 
 import Homepage from '../components/pages/homepage'
 import Dashboard from '../components/pages/dashboard'
+import OrganizationPanel from '../components/dashboard/organization_panel';
 
 const store = configureStore();
 
@@ -16,7 +17,10 @@ render(
   <Provider store={store}>
     <Router history={browserHistory}>
       <Route path='/' component={Homepage} />
-      <Route path='/dashboard' component={Dashboard} />
+      <Route path='/dashboard' component={Dashboard}>
+        <IndexRoute component={OrganizationPanel}/>
+        <Route path='organizations' component={OrganizationPanel}/>
+      </Route>
     </Router>
   </Provider>,
   document.getElementById('todo-list')

@@ -1,4 +1,4 @@
-class OrganizationsController < ApplicationController
+class Api::OrganizationsController < ApplicationController
   before_action :authenticate_user!
 
   def index
