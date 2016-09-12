@@ -11,7 +11,8 @@ Rails.application.routes.draw do
   end
 
   namespace :api do
-    resources :todos, except: ['edit', 'new']
+    resources :todos, except: ['edit', 'new', 'show']
+    resources :organizations, except: ['edit', 'new', 'show']
   end
 
   # You can have the root of your site routed with "root"
