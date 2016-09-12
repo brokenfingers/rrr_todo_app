@@ -2,6 +2,7 @@ import React from 'react';
 import { toggleModal } from '../../actions/sign_up_modal';
 import { connect } from 'react-redux';
 import { signOutUser } from '../../actions/authentication';
+import { Link } from 'react-router';
 
 class NavigationBar extends React.Component {
   constructor(props) {
@@ -34,6 +35,9 @@ class NavigationBar extends React.Component {
             <ul className='nav navbar-nav navbar-right'>
               <li>
                 {this.renderAuthLink()}
+              </li>
+              <li>
+                <Link to='/dashboard'>Dashboard</Link>
               </li>
             </ul>
           </div>

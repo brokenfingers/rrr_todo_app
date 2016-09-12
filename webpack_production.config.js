@@ -3,7 +3,7 @@ var webpack = require('webpack');
 
 var config = module.exports = {
   entry: {
-    index: './app/frontend/javascripts/applications/main_application.js'
+    index: './app/frontend/javascripts/entries/entry.js'
   }
 };
 
