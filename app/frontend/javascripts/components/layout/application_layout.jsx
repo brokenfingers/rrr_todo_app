@@ -4,6 +4,18 @@ import { connect } from 'react-redux';
 import { verifySession } from '../../actions/authentication';
 
 class ApplicationLayout extends React.Component {
+  constructor(props, context) {
+    super(props, context);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.loggedIn) {
+      this.context.router.push('/dashboard');
+    } else {
+      this.context.router.push('/');
+    }
+  }
+
   componentDidMount() {
     this.props.dispatch(verifySession());
   }
@@ -20,8 +32,12 @@ class ApplicationLayout extends React.Component {
 
 function mapStateToProps(state) {
   return {
-
+    loggedIn: state.authentication.loggedIn
   };
+};
+
+ApplicationLayout.contextTypes = {
+  router: React.PropTypes.object.isRequired
 };
 
 export default connect(mapStateToProps)(ApplicationLayout);

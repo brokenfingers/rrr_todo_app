@@ -10,7 +10,7 @@ import { loginUser, registerUser } from '../../actions/authentication';
 // Should redirect the user to Dashboard if logged in else to Homepage if logged out
 class SignUpModal extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
 
     this.state = {
       returningUser: true
@@ -91,7 +91,8 @@ class SignUpModal extends React.Component {
 
 function mapStateToProps(state) {
   return {
-    displayModal: state.signUpModal.displayModal
+    displayModal: state.signUpModal.displayModal,
+    loggedIn: state.authentication.loggedIn
   };
 };
 
