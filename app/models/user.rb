@@ -4,4 +4,7 @@ class User < ActiveRecord::Base
   include DeviseTokenAuth::Concerns::User
 
   has_many :memberships
+  has_many :joined_organizations, through: :memberships, source_type: 'Organization', source: 'joinable'
+  
+  has_many :organizations
 end
