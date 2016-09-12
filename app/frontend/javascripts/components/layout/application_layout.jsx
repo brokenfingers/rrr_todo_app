@@ -1,10 +1,9 @@
 import React from 'react';
 import NavigationBar from '../navigation_bar/navigation_bar';
 import { connect } from 'react-redux';
-import SignUpModal from '../modals/sign_up_modal';
 import { verifySession } from '../../actions/authentication';
 
-class Application extends React.Component {
+class ApplicationLayout extends React.Component {
   componentDidMount() {
     this.props.dispatch(verifySession());
   }
@@ -13,7 +12,6 @@ class Application extends React.Component {
     return (
       <div>
         <NavigationBar />
-        <SignUpModal />
         {this.props.children}
       </div>
     );
@@ -26,4 +24,4 @@ function mapStateToProps(state) {
   };
 };
 
-export default connect(mapStateToProps)(Application);
+export default connect(mapStateToProps)(ApplicationLayout);

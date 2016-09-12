@@ -11,7 +11,7 @@ var config = module.exports = {
   entry: {
     webpackDev: 'webpack/hot/only-dev-server',
     // The entry point for the application js i.e. './app/frontend/javascripts/app.js'
-    index: './app/frontend/javascripts/applications/todo.js'
+    index: './app/frontend/javascripts/entries/entry.js'
   }
 };
 
