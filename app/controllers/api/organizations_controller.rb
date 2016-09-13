@@ -10,10 +10,24 @@ class Api::OrganizationsController < ApplicationController
   end
 
   def create
+    organization = current_user.organizations.build(organization_params)
+    
+    if organization.save
+      render Json.response({
+          organization: organization
+        }, :ok)
+    else
 
+    end
   end
 
   def update
 
+  end
+
+  private
+
+  def organization_params
+    params.permit(:name, :description)
   end
 end
