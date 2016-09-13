@@ -25,8 +25,6 @@ export function fetchOrganizations() {
 export function loadOrganizations(json_resp) {
   return {
     type: LOAD_ORGANIZATIONS,
-    payload: {
-      organizations: json_resp
-    }
+    payload: json_resp
   };
 }

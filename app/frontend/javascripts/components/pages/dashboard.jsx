@@ -1,14 +1,15 @@
 import React from 'react';
 import { Component } from 'react';
+import ApplicationLayout from '../layout/application_layout';
 
-export default class Dashboard extends Component {
-  constructor(props) {
-    super(props)
+class Dashboard extends Component {
+  constructor(props, context) {
+    super(props, context)
   }
 
   render() {
     return (
-      <div>
+      <ApplicationLayout>
         <div className='row'>
           <div className='col-xs-2'>
             {/* This will render sidebar with Links to other panels */}
@@ -18,7 +19,9 @@ export default class Dashboard extends Component {
             {this.props.children}
           </div>
         </div>
-      </div>
+      </ApplicationLayout>
     );
   }
 }
+
+export default Dashboard;

@@ -3,12 +3,14 @@ import {
 } from '../actions/organization';
 
 export default function organization(state = {
-  organizations: []
+  owned_organizations: [],
+  joined_organizations: []
 }, action) {
   switch (action.type) {
     case LOAD_ORGANIZATIONS:
       return Object.assign({}, state, {
-        organizations: action.payload.organizations
+        owned_organizations: action.payload.data.owned_organizations,
+        joined_organizations: action.payload.data.joined_organizations
       });
     default:
       return state;

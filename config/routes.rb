@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   root 'home#index'
 
+  get '/dashboard' => 'home#index'
+
   # Nesting under a namespace messes up the helper methods created
   # such as current_user to current_api_user, etc
   scope :api do
