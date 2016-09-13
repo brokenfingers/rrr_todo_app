@@ -2,6 +2,7 @@ import React from 'react';
 import { Component } from 'react';
 import { connect } from 'react-redux';
 import { getOrganizations } from '../../actions/organization';
+import { toggleModal } from '../../actions/organization_modal';
 
 import OrganizationList from './organization_panel/organization_list';
 
@@ -14,6 +15,11 @@ class OrganizationPanel extends Component {
     this.props.dispatch(getOrganizations());
   }
 
+  handleToggleOrgModal(event) {
+    event.preventDefault();
+    this.props.dispatch(toggleModal());
+  }
+
   renderOrganizationsLists() {
     let organizationsList = [];
 
@@ -23,6 +29,7 @@ class OrganizationPanel extends Component {
         organizations={this.props.owned_organizations}
         displayPlaceholder={true}
         key={'owned-organizations-list'}
+        handleToggleOrgModal={this.handleToggleOrgModal.bind(this)}
       />
     );
 

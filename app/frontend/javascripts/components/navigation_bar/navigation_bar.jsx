@@ -49,7 +49,6 @@ class NavigationBar extends React.Component {
 
 function mapStateToProps(state) {
   return {
-    displayModal: state.signUpModal.displayModal,
     loggedIn: state.authentication.loggedIn
   };
 };
