@@ -4,9 +4,23 @@ import Organization from './organization';
 
 class OrganizationList extends Component {
   renderOrganizations() {
-    return this.props.organizations.map((organization) => {
-      return <Organization key={organization.id} data={organization} />;
+    let organizationList = [];
+
+    this.props.organizations.forEach((organization) => {
+      organizationList.push(
+        <Organization key={organization.id} data={organization} />
+      );
     });
+
+    if (this.props.displayPlaceholder) {
+      organizationList.push(
+        <div key='placeholder-organization'>
+          <a href='#' onClick={this.props.handleToggleOrgModal}>Org</a>
+        </div>
+      );
+    }
+
+    return organizationList;
   }
 
   render() {
@@ -18,8 +32,6 @@ class OrganizationList extends Component {
         <div className='row'>
           {this.renderOrganizations()}
         </div>
-        {/* Move to a div inside the renderOrganization */}
-        <a href='#' onClick={this.props.handleToggleOrgModal}>Org</a>
       </div>
     )
   }
