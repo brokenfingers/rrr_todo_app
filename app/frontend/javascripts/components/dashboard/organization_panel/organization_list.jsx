@@ -18,6 +18,8 @@ class OrganizationList extends Component {
         <div className='row'>
           {this.renderOrganizations()}
         </div>
+        {/* Move to a div inside the renderOrganization */}
+        <a href='#' onClick={this.props.handleToggleOrgModal}>Org</a>
       </div>
     )
   }
@@ -26,7 +28,8 @@ class OrganizationList extends Component {
 OrganizationList.propTypes = {
   title: React.PropTypes.string.isRequired,
   organizations: React.PropTypes.array.isRequired,
-  displayPlaceholder: React.PropTypes.bool.isRequired
+  displayPlaceholder: React.PropTypes.bool.isRequired,
+  handleToggleOrgModal: React.PropTypes.func
 }
 
 export default OrganizationList;
