@@ -14,8 +14,8 @@ class OrganizationList extends Component {
 
     if (this.props.displayPlaceholder) {
       organizationList.push(
-        <div key='placeholder-organization'>
-          <a href='#' onClick={this.props.handleToggleOrgModal}>Org</a>
+        <div key='placeholder-organization' className='organization-box col-xs-3'>
+          <a href='#' onClick={this.props.handleToggleOrgModal}>+ Add Organization</a>
         </div>
       );
     }
@@ -26,10 +26,10 @@ class OrganizationList extends Component {
   render() {
     return (
       <div className='row'>
-        <div className='row'>
+        <div className='col-xs-12'>
           <p>{this.props.title}</p>
         </div>
-        <div className='row'>
+        <div className='col-xs-12 organizations-list'>
           {this.renderOrganizations()}
         </div>
       </div>
