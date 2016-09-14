@@ -7,7 +7,7 @@ import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 import Homepage from '../components/pages/homepage'
 import Dashboard from '../components/pages/dashboard'
 import OrganizationPanel from '../components/dashboard/organization_panel';
-// import OrganizationDashboard from '../components/dashboard/organization_dashboard';
+import OrganizationDashboard from '../components/dashboard/organization_dashboard';
 
 const store = configureStore();
 
@@ -26,9 +26,8 @@ render(
     <Router history={browserHistory}>
       <Route path='/' component={Homepage} />
       <Route path='/dashboard' component={Dashboard} onEnter={requireAuth}>
-        <IndexRoute component={OrganizationPanel}/>
         <Route path='organizations' component={OrganizationPanel}/>
-        {/* <Route path='organization/:id' component={OrganizationDashboard} /> */}
+        <Route path='organizations/:id' component={OrganizationDashboard} />
       </Route>
     </Router>
   </Provider>,

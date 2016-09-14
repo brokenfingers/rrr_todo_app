@@ -5,7 +5,7 @@ import { Link } from 'react-router';
 class Organization extends Component {
   render() {
     return (
-      <Link to={`dashboard/organization/${this.props.data.id}`}>
+      <Link to={`/dashboard/organizations/${this.props.data.id}`}>
         <div className='organization-box'>
           <img className='organization-img' src='https://placeholdit.imgix.net/~text?txtsize=22&txt=Organization&w=350&h=150'/>
           <div className='organization-box-details'>
