@@ -9,9 +9,7 @@ class ApplicationLayout extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (!this.props.loggedIn && nextProps.loggedIn) {
-      this.context.router.push('/dashboard');
-    } else if (this.props.loggedIn && !nextProps.loggedIn){
+    if (this.props.loggedIn && !nextProps.loggedIn){
       this.context.router.push('/');
     }
   }

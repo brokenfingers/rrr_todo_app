@@ -1,4 +1,4 @@
-.organization-box {
+.organization-box, .group-box {
   background: grey;
   margin-bottom: 10px;
   margin-right: 10px;
@@ -7,15 +7,15 @@
   float: left;
 }
 
-.organization-img {
+.organization-img, .group-img {
   width: 100%;
 }
 
-.organizations-list {
+.organizations-list, .group-list {
 
 }
 
-.organization-box-details {
+.organization-box-details, .group-box-details {
   height: 9vw;
   overflow-y: scroll;
 }

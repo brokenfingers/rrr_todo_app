@@ -1,8 +1,5 @@
 import React from 'react';
 import { Component } from 'react';
-import ApplicationLayout from '../layout/application_layout';
-// import { toggleModal } from '../../actions/organization_modal';
-import OrganizationModal from '../modals/organization_modal';
 
 class Dashboard extends Component {
   constructor(props, context) {
@@ -11,7 +8,7 @@ class Dashboard extends Component {
 
   render() {
     return (
-      <ApplicationLayout>
+      <div>
         <div className='row'>
           <div className='col-xs-2'>
             {/* This will render sidebar with Links to other panels */}
@@ -21,8 +18,7 @@ class Dashboard extends Component {
             {this.props.children}
           </div>
         </div>
-        <OrganizationModal />
-      </ApplicationLayout>
+      </div>
     );
   }
 }
