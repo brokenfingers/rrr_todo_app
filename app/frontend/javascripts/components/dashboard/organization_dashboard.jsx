@@ -9,7 +9,12 @@ class OrganizationDashboard extends Component {
   }
 
   render() {
-    return <p>Why I am being redirected on refresh</p>
+    return (
+      <div>
+        <h4>{this.props.organization.name}</h4>
+        <p>{this.props.organization.description}</p>
+      </div>
+    );
   }
 }
 
