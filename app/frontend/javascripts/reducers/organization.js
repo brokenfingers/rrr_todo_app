@@ -5,7 +5,9 @@ import {
 export default function organization(state = {
   owned_organizations: [],
   joined_organizations: [],
-  organization: {}
+  organization: {
+    groups: []
+  }
 }, action) {
   switch (action.type) {
     case LOAD_ORGANIZATIONS:

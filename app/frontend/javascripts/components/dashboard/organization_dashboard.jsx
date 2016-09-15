@@ -26,7 +26,7 @@ class OrganizationDashboard extends Component {
 function mapStateToProps(state) {
   return {
     organization: state.organization.organization,
-    groups: state.organization.organization.groups || []
+    groups: state.organization.organization.groups
   };
 }
 
