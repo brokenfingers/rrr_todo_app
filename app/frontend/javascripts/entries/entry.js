@@ -8,6 +8,7 @@ import Homepage from '../components/pages/homepage'
 import Dashboard from '../components/pages/dashboard'
 import OrganizationPanel from '../components/dashboard/organization_panel';
 import OrganizationDashboard from '../components/dashboard/organization_dashboard';
+import ApplicationLayout from '../components/layout/application_layout';
 
 const store = configureStore();
 
@@ -24,11 +25,13 @@ function requireAuth(nextState, replace) {
 render(
   <Provider store={store}>
     <Router history={browserHistory}>
-      <Route path='/' component={Homepage} />
-      <Route path='/dashboard' component={Dashboard} onEnter={requireAuth}>
-        <IndexRoute component={OrganizationPanel}/>
-        <Route path='organizations' component={OrganizationPanel}/>
-        <Route path='organizations/:id' component={OrganizationDashboard} />
+      <Route path='/' component={ApplicationLayout}>
+        <IndexRoute component={Homepage} />
+        <Route path='/dashboard' component={Dashboard} onEnter={requireAuth}>
+          <IndexRoute component={OrganizationPanel}/>
+          <Route path='organizations' component={OrganizationPanel}/>
+          <Route path='organizations/:id' component={OrganizationDashboard} />
+        </Route>
       </Route>
     </Router>
   </Provider>,
