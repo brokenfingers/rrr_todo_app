@@ -26,6 +26,7 @@ render(
     <Router history={browserHistory}>
       <Route path='/' component={Homepage} />
       <Route path='/dashboard' component={Dashboard} onEnter={requireAuth}>
+        <IndexRoute component={OrganizationPanel}/>
         <Route path='organizations' component={OrganizationPanel}/>
         <Route path='organizations/:id' component={OrganizationDashboard} />
       </Route>
