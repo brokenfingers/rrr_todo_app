@@ -3,4 +3,10 @@ class Organization < ActiveRecord::Base
   has_many :groups
   has_many :memberships, as: :joinable
   has_many :members, through: :memberships, class_name: 'User'
+
+  def as_json(options = {})
+    super(options.merge({
+      include: :groups
+    }))
+  end
 end

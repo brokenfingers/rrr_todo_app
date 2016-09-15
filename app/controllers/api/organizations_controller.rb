@@ -9,7 +9,7 @@ class Api::OrganizationsController < ApplicationController
   def show
     if organization
       render Json.response({
-        organization: organization
+        organization: organization.as_json
       }, :ok)
     else
       # Need to render an error message
