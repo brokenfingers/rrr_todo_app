@@ -5,9 +5,9 @@ module ApplicationHelper
         manifest = Rails.configuration.webpack[:asset_manifest]
         filename = manifest[bundle]
 
-        "#{compute_asset_host}/assets/#{filename}"
+        "#{compute_asset_host}/assets/bundle/#{filename}"
       else
-        "#{compute_asset_host}/assets/#{bundle}-bundle"
+        "#{compute_asset_host}/assets/bundle/#{bundle}-bundle"
       end
 
     javascript_include_tag(src)
