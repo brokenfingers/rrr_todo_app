@@ -1,4 +1,7 @@
 if Rails.configuration.webpack[:use_manifest]
+  Rails.application.load_tasks
+  Rake::Task['webpack:compile'].invoke
+
   asset_manifest = Rails.root.join('public', 'assets', 'webpack-asset-manifest.json')
   common_manifest = Rails.root.join('public', 'assets', 'webpack-common-manifest.json')
 

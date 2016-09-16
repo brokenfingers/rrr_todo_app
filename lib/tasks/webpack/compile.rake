@@ -5,17 +5,9 @@ namespace :webpack do
     output = `#{cmd}`
 
     stats = JSON.parse(output)
-
+    
     File.open('./public/assets/webpack-asset-manifest.json', 'w') do |f|
       f.write stats['assetsByChunkName'].to_json
-    end
-
-    asset_manifest = Rails.root.join('public', 'assets', 'webpack-asset-manifest.json')
-
-    if File.exist?(asset_manifest)
-      Rails.configuration.webpack[:asset_manifest] = JSON.parse(
-        File.read(asset_manifest),
-      )
     end
   end
 end
