@@ -25,7 +25,7 @@ module RrrTodoApp
     config.active_record.raise_in_transactional_callbacks = true
 
     config.webpack = {
-      :user_manifest => false,
+      :use_manifest => false,
       :asset_manifest => {},
       :common_manifest => {}
     }
