@@ -14,7 +14,7 @@
 
 # Untangling Sprockets (To use Webpack)
 /public/assets
-/app/assets/javascripts/webpack_bundle
+/app/assets/javascripts/bundle
 
 # Ignore node modules
 /node_modules
