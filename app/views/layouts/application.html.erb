@@ -2,9 +2,10 @@
 <html>
 <head>
   <title>Sprinter</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
   <link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application' %>
+  <%= webpack_manifest_script %>
   <%= csrf_meta_tags %>
 </head>
 <body class='container-fluid'>
