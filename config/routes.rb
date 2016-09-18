@@ -14,8 +14,15 @@ Rails.application.routes.draw do
 
   namespace :api do
     resources :todos, except: ['edit', 'new', 'show']
-    resources :organizations, except: ['edit', 'new', 'show']
+    resources :organizations, except: ['edit', 'new']
   end
+
+  scope :dashboard do
+    get '/organizations' => 'home#index'
+    get '/organizations/:id' => 'home#index'
+  end
+
+
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'

@@ -18,3 +18,5 @@
 
 # Ignore node modules
 /node_modules
+
+.byebug_history

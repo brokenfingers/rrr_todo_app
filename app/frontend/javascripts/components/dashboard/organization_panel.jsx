@@ -5,6 +5,7 @@ import { getOrganizations } from '../../actions/organization';
 import { toggleModal } from '../../actions/organization_modal';
 
 import OrganizationList from './organization_panel/organization_list';
+import OrganizationModal from '../modals/organization_modal';
 
 class OrganizationPanel extends Component {
   constructor(props) {
@@ -51,6 +52,7 @@ class OrganizationPanel extends Component {
     return (
       <div>
         {this.renderOrganizationsLists()}
+        <OrganizationModal />
       </div>
     );
   }
