@@ -26,7 +26,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'bcrypt', '~> 3.1.7'
 
 # Scaffolder to create necessary files for webpack
-gem 'webpack-react-on-rails'
+gem 'webpack_react_on_rails'
 
 # Token based authentication
 gem 'devise_token_auth'

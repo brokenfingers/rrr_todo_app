@@ -185,7 +185,7 @@ GEM
       binding_of_caller (>= 0.7.2)
       railties (>= 4.0)
       sprockets-rails (>= 2.0, < 4.0)
-    webpack-react-on-rails (0.0.4)
+    webpack_react_on_rails (1.0.0)
       rails (>= 4.1.0, < 5.1)
 
 PLATFORMS
@@ -209,7 +209,7 @@ DEPENDENCIES
   spring
   uglifier (>= 1.3.0)
   web-console (~> 2.0)
-  webpack-react-on-rails
+  webpack_react_on_rails
 
 BUNDLED WITH
    1.11.2
